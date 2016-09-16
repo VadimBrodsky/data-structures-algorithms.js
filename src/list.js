@@ -35,6 +35,7 @@ List.prototype = {
   append: function(element) {
     this.dataStore[this.listSize] = element;
     this.listSize += 1;
+
     return this;
   },
   // Removes element from list
