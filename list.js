@@ -21,7 +21,11 @@ List.prototype = {
   // Inserts new element after existing element
   insert: function() {},
   // Adds new element to end of list
-  append: function() {},
+  append: function(element) {
+    this.dataStore[this.listSize] = element;
+    this.listSize += 1;
+    return this;
+  },
   // Removes element from list
   remove: function() {},
   // Sets current position to the first element of list
@@ -44,3 +48,4 @@ List.prototype = {
   contains: function() {}
 };
 
+module.exports = List;
