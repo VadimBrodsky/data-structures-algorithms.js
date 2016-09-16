@@ -20,7 +20,7 @@ List.prototype = {
         position = -1;
 
     this.dataStore.forEach(function(item, i){
-      if(self.dataStore[i] == element) {
+      if(self.dataStore[i] === element) {
         position = i;
       }
     });
