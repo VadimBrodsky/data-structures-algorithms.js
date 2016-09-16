@@ -38,7 +38,17 @@ List.prototype = {
     return this;
   },
   // Removes element from list
-  remove: function() {},
+  remove: function(element) {
+    var foundIndex = this.find(element);
+
+    if (foundIndex > -1) {
+      this.dataStore.splice(foundIndex, 1);
+      this.listSize -= 1;
+      return true;
+    } else {
+      return false;
+    }
+  },
   // Sets current position to the first element of list
   front: function() {},
   // Sets current position to last element of list

@@ -53,4 +53,34 @@ describe("List data structure", function() {
 
   });
 
+
+  describe("remove method", function() {
+    var list;
+
+    beforeEach(function() {
+      list = new ListClass;
+      list.append('first').append('second').append('third');
+    });
+
+    it("should be defined", function() {
+      expect(list.remove).toBeDefined();
+    });
+
+    it("should remove the element at the given position", function() {
+      var result = list.remove('second');
+
+      expect(result).toBe(true);
+      expect(list.listSize).toEqual(2);
+      expect(list.dataStore).toEqual(['first', 'third']);
+    });
+
+    it("should return false if the element is not removed", function() {
+      var result = list.remove('something else');
+
+      expect(result).toBe(false);
+      expect(list.listSize).toEqual(3);
+      expect(list.dataStore).toEqual(['first', 'second', 'third']);
+    });
+  });
+
 });
