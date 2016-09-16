@@ -15,7 +15,18 @@ List.prototype = {
   // Clears all elements from list
   clear: function() {},
   // Finds the position of a specific element
-  find: function() {},
+  find: function(element) {
+    var self = this,
+        position = -1;
+
+    this.dataStore.forEach(function(item, i){
+      if(self.dataStore[i] == element) {
+        position = i;
+      }
+    });
+
+    return position;
+  },
   // Returns the string representation of list
   toString: function() {},
   // Inserts new element after existing element
