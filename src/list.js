@@ -59,7 +59,9 @@ List.prototype = {
   // Moves current position forward one element
   next: function() {},
   // Number of elements in list
-  length: function() {},
+  length: function() {
+    return this.listSize;
+  },
   // Returns the current position in list
   currPos: function() {},
   // Moves the current position in list

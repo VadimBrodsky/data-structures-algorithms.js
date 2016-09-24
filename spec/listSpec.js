@@ -83,4 +83,27 @@ describe("List data structure", function() {
     });
   });
 
+
+  describe("length method", function() {
+    var list;
+
+    beforeEach(function() {
+      list = new ListClass;
+      list.append('first').append('second').append('third');
+    });
+
+    it("should be defined", function() {
+      expect(list.length).toBeDefined();
+    });
+
+    it("should return the number of elements in the list", function() {
+      expect(list.length()).toEqual(3);
+    });
+
+    it("should update the list was modified", function() {
+      list.append('fourth');
+      expect(list.length()).toEqual(4);
+    });
+  });
+
 });
