@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 var List = function List() {
   // Number of elements in list
