@@ -1,6 +1,6 @@
 const { default: List } = require('../build/list.js');
 
-describe("List data structure", () => {
+describe("List", () => {
   it("should have a constructor function", () => {
     const list = new List();
     expect(list).toBeDefined();
@@ -55,16 +55,17 @@ describe("List data structure", () => {
     it("should return -1 if the element is not found", () => {
       expect(list.find('not here')).toEqual(-1);
     });
-
   });
 
 
-  xdescribe("remove method", () => {
+  describe("#remove", () => {
     let list;
 
     beforeEach(() => {
       list = new List();
-      list.append('first').append('second').append('third');
+      list.append('first');
+      list.append('second');
+      list.append('third');
     });
 
     it("should be defined", () => {
@@ -89,12 +90,14 @@ describe("List data structure", () => {
   });
 
 
-  xdescribe("length method", () => {
+  describe("#length", () => {
     let list;
 
     beforeEach(() => {
       list = new List();
-      list.append('first').append('second').append('third');
+      list.append('first');
+      list.append('second');
+      list.append('third');
     });
 
     it("should be defined", () => {
