@@ -1,26 +1,31 @@
 export default class List {
-  private listSize = 0;
-  private pos = 0;
-  private dataStore = [];
+  private dataStore: unknown[];
+  public listSize: number;
+  public pos: number;
+
+  constructor() {
+    this.dataStore = [];
+    this.listSize = 0;
+    this.pos = 0;
+  }
+
+  public append(element: unknown) {
+    this.dataStore[this.listSize] = element;
+    this.listSize += 1;
+  }
+
+  public find(element: unknown): number {
+    const position = this.dataStore.findIndex((item) => item === element);
+    return position ? position : -1;
+  }
 
   public clear() {}
 
-  public find(element) {
-    const position = -1;
-    this.dataStore.forEach(function(item, i) {});
-    return position;
-  }
 
   public toString() {}
 
   public insert() {}
 
-  public append(element) {
-    this.dataStore[this.listSize] = element;
-    this.listSize += 1;
-
-    return this;
-  }
 
   public remove(element) {
     var foundIndex = this.find(element);
