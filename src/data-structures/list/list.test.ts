@@ -1,4 +1,4 @@
-const { default: List } = require('../../../build/list.js');
+import List from './list';
 
 describe("List", () => {
   it("should have a constructor function", () => {
