@@ -20,8 +20,10 @@
 	"jest": {
 		"preset": "ts-jest",
 		"globals": {
-			"ts-jest": {
-				"diagnostics": false
+      "ts-jest": {
+        "diagnostics": {
+          "warnOnly": true
+        }
 			}
 		}
 	}
