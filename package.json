@@ -17,14 +17,14 @@
     "test": "yarn jest",
     "clean": "rm -rf build/*"
   },
-	"jest": {
-		"preset": "ts-jest",
-		"globals": {
+  "jest": {
+    "preset": "ts-jest",
+    "globals": {
       "ts-jest": {
         "diagnostics": {
           "warnOnly": true
         }
-			}
-		}
-	}
+      }
+    }
+  }
 }
