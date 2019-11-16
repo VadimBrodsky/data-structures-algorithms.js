@@ -1,4 +1,4 @@
-export default function linearSearch(collection: unknown[], value: unknown): number {
+export default function linearSearch<T>(collection: T[], value: T): number {
   for (let i = 0; i < collection.length; i++) {
     if (collection[i] === value) {
       return i;
