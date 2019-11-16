@@ -1,28 +1,34 @@
-const swap = <T>(index1: number, index2: number, arr: T[]): T[] =>
-  ([arr[index1], arr[index2]] = [arr[index2], arr[index1]]);
+import swap from '../../helpers/swap';
 
 // Bubbles the largest values to the end
-function bubbleSort<T>(arr: T[]): T[] {
+function bubbleSort<T>(arr: T[]): [T[], n] {
+  let n = 0;
+
   for (let i = arr.length - 1; i > 0; i--) {
     for (let j = 0; j < i; j++) {
+      n++;
       if (arr[j] > arr[j + 1]) {
+        n++;
         swap(j, j + 1, arr);
       }
     }
   }
 
-  return arr;
+  return [arr, n];
 }
 
 // Stops going through the array if no swaps were made
-function bubbleSortOptimized<T>(arr: T[]): T[] {
+function bubbleSortOptimized<T>(arr: T[]): [T[], number] {
+  let n = 0;
   let swapsMade = false;
 
   for (let i = arr.length - 1; i > 0; i--) {
     swapsMade = false;
 
     for (let j = 0; j < i; j++) {
+      n++;
       if (arr[j] > arr[j + 1]) {
+        n++;
         swap(j, j + 1, arr);
         swapsMade = true;
       }
@@ -33,7 +39,8 @@ function bubbleSortOptimized<T>(arr: T[]): T[] {
       break;
     }
   }
-  return arr;
+
+  return [arr, n];
 }
 
 export { bubbleSort as default, bubbleSortOptimized };
